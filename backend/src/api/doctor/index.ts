@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/doctor`,
+    require('./doctorCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/doctor/:id`,
+    require('./doctorUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/doctor/import`,
+    require('./doctorImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/doctor`,
+    require('./doctorDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/doctor/autocomplete`,
+    require('./doctorAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/doctor`,
+    require('./doctorList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/doctor/:id`,
+    require('./doctorFind').default,
+  );
+};

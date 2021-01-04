@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/medicine-inventory`,
+    require('./medicineInventoryCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/medicine-inventory/:id`,
+    require('./medicineInventoryUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/medicine-inventory/import`,
+    require('./medicineInventoryImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/medicine-inventory`,
+    require('./medicineInventoryDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/medicine-inventory/autocomplete`,
+    require('./medicineInventoryAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/medicine-inventory`,
+    require('./medicineInventoryList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/medicine-inventory/:id`,
+    require('./medicineInventoryFind').default,
+  );
+};

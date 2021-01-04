@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/diagnostic-enum`,
+    require('./diagnosticEnumCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/diagnostic-enum/:id`,
+    require('./diagnosticEnumUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/diagnostic-enum/import`,
+    require('./diagnosticEnumImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/diagnostic-enum`,
+    require('./diagnosticEnumDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/diagnostic-enum/autocomplete`,
+    require('./diagnosticEnumAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/diagnostic-enum`,
+    require('./diagnosticEnumList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/diagnostic-enum/:id`,
+    require('./diagnosticEnumFind').default,
+  );
+};

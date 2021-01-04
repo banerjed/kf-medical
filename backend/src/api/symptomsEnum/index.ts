@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/symptoms-enum`,
+    require('./symptomsEnumCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/symptoms-enum/:id`,
+    require('./symptomsEnumUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/symptoms-enum/import`,
+    require('./symptomsEnumImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/symptoms-enum`,
+    require('./symptomsEnumDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/symptoms-enum/autocomplete`,
+    require('./symptomsEnumAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/symptoms-enum`,
+    require('./symptomsEnumList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/symptoms-enum/:id`,
+    require('./symptomsEnumFind').default,
+  );
+};

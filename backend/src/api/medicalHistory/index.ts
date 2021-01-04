@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/medical-history`,
+    require('./medicalHistoryCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/medical-history/:id`,
+    require('./medicalHistoryUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/medical-history/import`,
+    require('./medicalHistoryImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/medical-history`,
+    require('./medicalHistoryDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/medical-history/autocomplete`,
+    require('./medicalHistoryAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/medical-history`,
+    require('./medicalHistoryList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/medical-history/:id`,
+    require('./medicalHistoryFind').default,
+  );
+};

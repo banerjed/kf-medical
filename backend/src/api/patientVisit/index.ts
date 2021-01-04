@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/patient-visit`,
+    require('./patientVisitCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/patient-visit/:id`,
+    require('./patientVisitUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/patient-visit/import`,
+    require('./patientVisitImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/patient-visit`,
+    require('./patientVisitDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/patient-visit/autocomplete`,
+    require('./patientVisitAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/patient-visit`,
+    require('./patientVisitList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/patient-visit/:id`,
+    require('./patientVisitFind').default,
+  );
+};

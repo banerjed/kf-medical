@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/health-center`,
+    require('./healthCenterCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/health-center/:id`,
+    require('./healthCenterUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/health-center/import`,
+    require('./healthCenterImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/health-center`,
+    require('./healthCenterDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/health-center/autocomplete`,
+    require('./healthCenterAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/health-center`,
+    require('./healthCenterList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/health-center/:id`,
+    require('./healthCenterFind').default,
+  );
+};

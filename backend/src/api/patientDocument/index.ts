@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/patient-document`,
+    require('./patientDocumentCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/patient-document/:id`,
+    require('./patientDocumentUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/patient-document/import`,
+    require('./patientDocumentImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/patient-document`,
+    require('./patientDocumentDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/patient-document/autocomplete`,
+    require('./patientDocumentAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/patient-document`,
+    require('./patientDocumentList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/patient-document/:id`,
+    require('./patientDocumentFind').default,
+  );
+};
