@@ -1,12 +1,12 @@
 // Place the URL here with the /api suffix.
 // Ex.:`https://domain.com/api`;
-const backendUrl = `/api`;
+const backendUrl = `https://medical-service-dot-kf-apps-288002.uc.r.appspot.com/api`
 
 /**
  * Frontend URL.
  */
 const frontendUrl = {
-  host: 'domain.com',
+  host: 'kf-medical.web.app',
   protocol: 'https',
 };
 
